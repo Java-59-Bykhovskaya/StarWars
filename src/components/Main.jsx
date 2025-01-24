@@ -1,16 +1,21 @@
-import Hero from './Hero.jsx'
-import DreamTeam from './DreamTeam.jsx'
-import FarGalaxyText from './FarGalaxyText.jsx'
+import Home from './Home.jsx';
+import { navItems } from '../utils/constants.js';
+import AboutMe from './AboutMe.jsx';
+import StarWars from './StarWars.jsx';
+import Contact from './Contact.jsx';
+// import { useState } from 'react';
 
-
-const main = () => {
-  return (
-    <main className="clearfix">
-      <Hero/>
-      <DreamTeam/>
-      <FarGalaxyText/>
-    </main>
-  );
+const Main = ({ page }) => {
+  switch (page) {
+    case navItems[1]:
+      return <AboutMe />;
+    case navItems[2]:
+      return <StarWars />;
+    case navItems[3]:
+      return <Contact />;
+    default:
+      return <Home />;
+  }
 };
 
-export default main;
+export default Main;

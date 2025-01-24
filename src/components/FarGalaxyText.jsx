@@ -9,17 +9,23 @@ const FarGalaxyText = () => {
     Math.floor(Math.random() * (max - min + 1) + min);
 
   const getOpeningCrawl = () => {
-    const randomSeason = getRandomSeason(1, 6);
-    const url = `${baseUrl}${randomSeason}`;
-    console.log(url);
-
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        setOpeningCrawl(data.opening_crawl);
-        setSpinnerClass('');
-      })
-      .catch((error) => console.error('Error:', error));
+    const opening_crawl = sessionStorage.getItem('opening_crawl');
+    if (opening_crawl) {
+      setSpinnerClass('');
+      setOpeningCrawl(opening_crawl);
+    } else {
+      const randomSeason = getRandomSeason(1, 6);
+      const url = `${baseUrl}${randomSeason}`;
+      console.log(url);
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+          setSpinnerClass('');
+          setOpeningCrawl(data.opening_crawl);
+          sessionStorage.setItem('opening_crawl', data.opening_crawl);
+        })
+        .catch((error) => console.error('Error:', error));
+    }
   };
 
   useEffect(() => {

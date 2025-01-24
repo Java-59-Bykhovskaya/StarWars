@@ -1,8 +1,8 @@
 import Navigation from './Navigation.jsx'
-const header = () => {
+const header = ({changePage}) => {
   return (
       <header className="rounded-top-4">
-        <Navigation/>
+        <Navigation changePage={changePage}/>
         <h1 className="text-center fs-1 py-3">Luke Skywalker</h1>
       </header>
   );
