@@ -1,12 +1,12 @@
-header,
+/* header,
 footer {
   background-color: rgba(60, 69, 67, 0.6);
-}
+} */
 
 /* header */
 
 /* main */
-
+/* 
 .bottomLeft {
   border-bottom-left-radius: 1rem;
 }
@@ -29,13 +29,13 @@ footer {
 
 /* footer */
 
-footer {
+/* footer {
   height: 5rem;
-}
+} */
 
 /* bootstrap customizing */
 
-.btn-danger {
+/* .btn-danger {
   border: 2px solid black;
   background-color: rgba(204, 3, 35, 0.5);
   border-radius: 5px;
@@ -44,4 +44,4 @@ footer {
 
 .border {
   border-color: #eedb00 !important;
-}
+} */
